@@ -29,8 +29,9 @@ Add SQL Server Database Project to the solution.
 ## 4. Setting up WPF App project
 
 Add WPF App (.NET Framework) project.
-
 Add Caliburn.Micro package
+
+## Setting up database tables
 
 
 ## Notes
