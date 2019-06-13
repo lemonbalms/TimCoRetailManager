@@ -22,6 +22,10 @@ To setup initial account:
 
 Add swagger (Swashbuckle) support
 
+## 3. Setting up Database project
+
+Add SQL Server Database Project to the solution.
+
 
 ## Notes
 
