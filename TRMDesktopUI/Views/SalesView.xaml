@@ -23,7 +23,13 @@
     
     <!-- Products -->
     <TextBlock Grid.Row="1" Grid.Column="0" Text="Items" />
-    <ListBox Grid.Row="2" Grid.Column="0" MinHeight="200" MinWidth="150" x:Name="Products" />
+    <ListBox Grid.Row="2" Grid.Column="0" MinHeight="200" MinWidth="150" x:Name="Products">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <TextBlock Text="{Binding ProductName}" />
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
 
     <!-- Buttons -->
     <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="20,0">

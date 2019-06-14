@@ -33,6 +33,14 @@ namespace TRMDesktopUI.Library.Api
             _apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+        public HttpClient ApiClient
+        {
+            get
+            {
+                return _apiClient;
+            }
+        }
+
         public async Task<AuthenticatedUser> Authenticate(string username, string password)
         {
             var encodedData = new FormUrlEncodedContent(new[] {
