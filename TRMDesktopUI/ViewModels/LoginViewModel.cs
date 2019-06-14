@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TRMDesktopUI.Helpers;
+using TRMDesktopUI.Library.Api;
 
 namespace TRMDesktopUI.ViewModels
 {
@@ -66,7 +66,7 @@ namespace TRMDesktopUI.ViewModels
         {
             get
             {
-                if (UserName?.Length > 0 && Password?.Length > 0) return true;
+                if (UserName?.Length > 2 && Password?.Length > 2) return true;
                 return false;
             }
         }
@@ -77,6 +77,9 @@ namespace TRMDesktopUI.ViewModels
             {
                 ErrorMessage = "";
                 var result = await _apiHelper.Authenticate(UserName, Password);
+
+                // Capture more information about the user
+                await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
             }
             catch (Exception ex)
             {
