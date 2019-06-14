@@ -22,7 +22,7 @@ namespace TRMDataManager.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            return $"value: {id}";
         }
 
         // POST api/values

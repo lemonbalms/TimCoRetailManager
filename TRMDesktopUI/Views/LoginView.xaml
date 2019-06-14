@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="TRMDesktopUI.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TRMDesktopUI.Views"
+             mc:Ignorable="d" 
+             Background="White"
+             FontSize="16"
+             d:DesignHeight="350" d:DesignWidth="700">
+    <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="auto" />
+      <ColumnDefinition Width="auto" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <TextBlock Grid.Row="0" Grid.Column="2" FontSize="36" FontFamily="Segoe UI Light" Text="Log In" Margin="10,20,0,10"/>
+    
+    <!-- Error message -->
+    <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="ErrorMessage" Margin="0,0,0,20" Foreground="Red" MaxWidth="300" TextWrapping="Wrap" Visibility="{Binding IsErrorVisible, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+      
+    <!-- Username -->
+    <TextBlock Grid.Row="2" Grid.Column="1" Text="Username:" Margin="0,0,0,20" />
+    <TextBox Grid.Row="2" Grid.Column="2" x:Name="UserName" MinWidth="200" Margin="10,0,0,10" />
+
+    <!-- Password -->
+    <TextBlock Grid.Row="3" Grid.Column="1" Text="Password:" Margin="0,0,0,20" />
+    <PasswordBox Grid.Row="3" Grid.Column="2" x:Name="Password" MinWidth="200" Margin="10,0,0,10" />
+      
+      <!-- Login button -->
+    <Button Grid.Row="4" Grid.Column="2" x:Name="LogIn" HorizontalAlignment="Left" Content="Log In" Padding="20,5" Margin="10,0,0,10" />
+  </Grid>
+</UserControl>

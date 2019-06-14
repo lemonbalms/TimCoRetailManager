@@ -31,8 +31,14 @@ Add SQL Server Database Project to the solution.
 Add WPF App (.NET Framework) project.
 Add Caliburn.Micro package
 
-## Setting up database tables
+## 5. Setting up database tables
 
+Setup database tables: User, Sale, Product, and Inventory.
+
+## 6. Adding Login screen
+
+Add Login window to ShellView
+Setup ApiHelper
 
 ## Notes
 
