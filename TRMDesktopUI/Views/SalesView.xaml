@@ -21,7 +21,7 @@
     <!-- Column 0 -->
     <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Sales Page" FontSize="24" Margin="0 0 0 20"/>
     
-    <!-- Items -->
+    <!-- Products -->
     <TextBlock Grid.Row="1" Grid.Column="0" Text="Items" />
     <ListBox Grid.Row="2" Grid.Column="0" MinHeight="200" MinWidth="150" x:Name="Products" />
 
@@ -39,17 +39,17 @@
 
     <DockPanel Grid.Row="3" Grid.Column="2">
       <TextBlock Text="SubTotal: " Margin="0 0 15 0" />
-      <TextBox x:Name="SubTotal" Text="$0.00" TextAlignment="Right" />
+      <TextBlock x:Name="SubTotal" Text="$0.00" TextAlignment="Right" />
     </DockPanel>
 
     <DockPanel Grid.Row="4" Grid.Column="2">
       <TextBlock Text="Tax: " />
-      <TextBox x:Name="Tax" Text="$0.00" TextAlignment="Right" />
+      <TextBlock x:Name="Tax" Text="$0.00" TextAlignment="Right" />
     </DockPanel>
 
     <DockPanel Grid.Row="5" Grid.Column="2">
       <TextBlock Text="Total: " />
-      <TextBox x:Name="total" Text="$0.00" TextAlignment="Right" />
+      <TextBlock x:Name="Total" Text="$0.00" TextAlignment="Right" />
     </DockPanel>
 
     <Button Grid.Row="6" Grid.Column="2" x:Name="CheckOut" Content="Check Out" Margin="0 20 0 0" Padding="5" />

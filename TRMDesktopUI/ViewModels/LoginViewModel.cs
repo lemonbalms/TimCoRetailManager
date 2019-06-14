@@ -5,20 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TRMDesktopUI.Library.Api;
+using TRMDesktopUI.Library.EventModels;
 
 namespace TRMDesktopUI.ViewModels
 {
     public class LoginViewModel:Screen
     {
-        private string _userName;
-        private string _password;
+        private string _userName = "minhl@toll.com.au";
+        private string _password = "Pass123.";
 
         private string _errorMessage;
         private readonly IApiHelper _apiHelper;
+        private readonly IEventAggregator _events;
 
-        public LoginViewModel(IApiHelper apiHelper)
+        public LoginViewModel(IApiHelper apiHelper, IEventAggregator events)
         {
             _apiHelper = apiHelper;
+            _events = events;
         }
 
         public bool IsErrorVisible
@@ -80,6 +83,8 @@ namespace TRMDesktopUI.ViewModels
 
                 // Capture more information about the user
                 await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
+
+                _events.PublishOnUIThread(new LogOnEvent());
             }
             catch (Exception ex)
             {

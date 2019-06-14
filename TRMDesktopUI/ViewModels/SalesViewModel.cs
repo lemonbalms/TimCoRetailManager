@@ -11,7 +11,8 @@ namespace TRMDesktopUI.ViewModels
     public class SalesViewModel:Screen
     {
         private BindingList<string> _products;
-        private string _itemQuantity;
+        private BindingList<string> _cart;
+        private int _itemQuantity;
 
         public BindingList<string> Products
         {
@@ -19,18 +20,16 @@ namespace TRMDesktopUI.ViewModels
             set { _products = value; NotifyOfPropertyChange(() => Products); }
         }
 
-        public string ItemQuantity
-        {
-            get { return _itemQuantity; }
-            set { _itemQuantity = value; NotifyOfPropertyChange(() => ItemQuantity); }
-        }
-
-        private BindingList<string> _cart;
-
         public BindingList<string> Cart
         {
             get { return _cart; }
-            set { _cart = value; }
+            set { _cart = value; NotifyOfPropertyChange(() => Cart); }
+        }
+
+        public int ItemQuantity
+        {
+            get { return _itemQuantity; }
+            set { _itemQuantity = value; NotifyOfPropertyChange(() => ItemQuantity); }
         }
 
         public string SubTotal
