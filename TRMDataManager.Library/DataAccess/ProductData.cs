@@ -16,7 +16,7 @@ namespace TRMDataManager.Library.DataAccess
 
             var parameters = new { };
 
-            var output = sql.LoadData<ProductModel, dynamic>("dbo.spProduct_GetAll", parameters, "DefaultConnection");
+            var output = sql.LoadData<ProductModel, dynamic>("dbo.spProduct_GetAll", parameters, "EFData");
 
             return output;
         }
