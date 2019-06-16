@@ -13,5 +13,6 @@ namespace TRMDataManager.Library.Models
         public string Description { get; set; }
         public string RetailPrice { get; set; }
         public string QuantityInStock { get; set; }
+        public bool IsTaxable { get; set; }
     }
 }
